@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <title>The Corner Gastrobar — Bilbao | Horno Industrial</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Share+Tech+Mono&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="/src/styles/main.css" />
+</head>
+<body>
+
+  <main class="hero-experience" id="heroExperience">
+    
+    <div class="hero-pinned-stage" id="pinnedStage">
+      
+      <div class="ambient-backdrop"></div>
+      
+      <!-- Oven Viewport Stage (16:9 Aspect Ratio) -->
+      <div class="oven-stage" id="ovenStage">
+        
+        <div class="oven-3d-scene" id="oven3dScene">
+          
+          <!-- 1. OVEN CHAMBER (BEHIND THE DOOR) -->
+          <div class="chamber-container" id="chamberContainer">
+            <img src="/src/assets/oven-interior.jpg" class="chamber-bg" alt="Interior del horno con piedra refractaria y resistencias" />
+            <div class="chamber-heat-glow" id="chamberHeatGlow"></div>
+          </div>
+
+          <!-- 2. LOWER LABYRINTH SEAL (Elimina cualquier hueco en la bisagra) -->
+          <div class="hinge-seal-lip"></div>
+
+          <!-- 3. THE PIZZA PEEL ASSEMBLY (Z: -140px reposo en solera -> +340px hero primer plano) -->
+          <div class="pizza-peel-assembly" id="pizzaPeelAssembly">
+            <div class="peel-plane" id="peelPlane">
+              <!-- Doble capa lumínica: calor térmico interior y fotografía nítida exterior -->
+              <img src="/src/assets/pizza-peel-warm.png" class="peel-layer peel-warm" id="peelWarm" alt="" />
+              <img src="/src/assets/pizza-peel.png" class="peel-layer peel-crisp" id="peelCrisp" alt="Pizza artesanal en pala de pizzero" />
+            </div>
+          </div>
+
+          <!-- 4. THE SINGLE 3D OVEN DOOR (Bascula hacia el espectador) -->
+          <div class="oven-door-assembly" id="doorAssembly">
+            <div class="door-prism" id="doorPrism">
+              
+              <!-- Front Face: Real Photographic Stainless Steel -->
+              <div class="door-face door-front">
+                <img src="/src/assets/door-front.png" class="door-texture-img" alt="Puerta de acero inoxidable del horno" />
+              </div>
+
+              <!-- Inner Face: Heat-Resistant Steel reflecting internal glow -->
+              <div class="door-face door-inner" id="doorInner">
+                <img src="/src/assets/door-inner.jpg" class="door-texture-img" alt="" />
+                <div class="door-inner-reflection" id="doorInnerReflection"></div>
+                <!-- Sombra proyectada por la pala sobre la compuerta abatida -->
+                <div class="peel-door-shadow" id="peelDoorShadow">
+                  <img src="/src/assets/pizza-peel-shadow.png" class="peel-shadow-img" alt="" />
+                </div>
+              </div>
+
+              <!-- Top Edge: 28px thickness rim facing camera when tilted -->
+              <div class="door-face door-top">
+                <img src="/src/assets/door-top-edge.png" class="door-top-img" alt="" />
+                <div class="top-specular-edge"></div>
+              </div>
+
+              <!-- Side Thickness Edges -->
+              <div class="door-face door-side-left"></div>
+              <div class="door-face door-side-right"></div>
+
+              <!-- Rotating Hinge Arms (Heredan la rotación 1:1 de la puerta) -->
+              <div class="door-hinge-arm arm-left"></div>
+              <div class="door-hinge-arm arm-right"></div>
+            </div>
+
+            <!-- Perimeter gasket glow (leaking heat in closed state) -->
+            <div class="door-perimeter-glow" id="doorPerimeterGlow">
+              <div class="gasket-line top"></div>
+              <div class="gasket-line bottom"></div>
+              <div class="gasket-line left"></div>
+              <div class="gasket-line right"></div>
+            </div>
+          </div>
+
+          <!-- Light Wash onto lower shelf when door opens -->
+          <div class="light-wash-lower" id="lightWashLower"></div>
+
+          <!-- Fixed Hinge Bases on Chassis (No rotan) -->
+          <div class="fixed-hinge-base base-left">
+            <div class="hinge-block"></div>
+            <div class="hinge-pivot-pin"></div>
+          </div>
+          <div class="fixed-hinge-base base-right">
+            <div class="hinge-block"></div>
+            <div class="hinge-pivot-pin"></div>
+          </div>
+
+          <!-- 4. OUTER CHASSIS FRAME & SINGLE HTML NAVIGATION -->
+          <div class="oven-chassis-frame">
+            <img src="/src/assets/oven-chassis.png" class="chassis-texture" alt="Estructura de acero del horno" />
+            
+            <!-- Single Master HTML Navigation in Upper Fascia -->
+            <header class="oven-header-nav">
+              
+              <!-- Left Nav Links -->
+              <nav class="nav-cluster nav-left" aria-label="Navegación Carta y Local">
+                <a href="#carta" class="steel-nav-link" id="navLinkCarta" data-modal="modal-carta">
+                  <span class="engraved-text">CARTA</span>
+                  <span class="laser-sheen"></span>
+                </a>
+                <span class="nav-pipe" aria-hidden="true">|</span>
+                <a href="#el-local" class="steel-nav-link" id="navLinkLocal" data-modal="modal-local">
+                  <span class="engraved-text">EL LOCAL</span>
+                  <span class="laser-sheen"></span>
+                </a>
+              </nav>
+
+              <!-- Center Master Logo: THE CORNER GASTROBAR -->
+              <div class="oven-brand-center">
+                <span class="brand-eyebrow">THE</span>
+                <a href="/" class="brand-main-title" aria-label="The Corner Gastrobar">CORNER</a>
+                <div class="brand-subline">
+                  <span class="brand-rule"></span>
+                  <span class="brand-subtext">GASTROBAR</span>
+                  <span class="brand-rule"></span>
+                </div>
+              </div>
+
+              <!-- Right Nav Links -->
+              <nav class="nav-cluster nav-right" aria-label="Navegación Reservas y Contacto">
+                <a href="#reservas" class="steel-nav-link" id="navLinkReservas" data-modal="modal-reservas">
+                  <span class="engraved-text">RESERVAS</span>
+                  <span class="laser-sheen"></span>
+                </a>
+                <span class="nav-pipe" aria-hidden="true">|</span>
+                <a href="#contacto" class="steel-nav-link" id="navLinkContacto" data-modal="modal-contacto">
+                  <span class="engraved-text">CONTACTO</span>
+                  <span class="laser-sheen"></span>
+                </a>
+              </nav>
+            </header>
+
+            <!-- Right Pillar: Single 320°C Digital LED & Rotary Dials -->
+            <div class="oven-controls-pillar">
+              <div class="digital-temp-readout" id="digitalTemp">
+                <span class="temp-digits">320</span>
+                <span class="temp-unit">°C</span>
+              </div>
+            </div>
+
+            <!-- Initial Scroll Cue (Desliza y Descubre) -->
+            <div class="scroll-cue" id="scrollCue">
+              <div class="cue-mouse">
+                <div class="cue-wheel"></div>
+              </div>
+              <span class="cue-label">DESLIZA Y DESCUBRE</span>
+              <svg class="cue-chevron" width="16" height="10" viewBox="0 0 16 10" fill="none">
+                <path d="M1 1.5L8 8.5L15 1.5" stroke="#ff7a18" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          </div>
+
+          <!-- 5. FINAL HERO PRESENTATION CLAIM: COMER BIEN. SIN ETIQUETAS. -->
+          <div class="hero-claim-layer" id="heroClaimLayer" aria-label="Comer bien. Sin etiquetas.">
+            <div class="claim-badge">AMETZOLA · BILBAO</div>
+            <h2 class="claim-main-title">
+              <span class="claim-line">COMER BIEN.</span>
+              <span class="claim-line claim-accent">SIN ETIQUETAS.</span>
+            </h2>
+            <div class="claim-gold-rule"></div>
+          </div>
+
+        </div><!-- /.oven-3d-scene -->
+      </div><!-- /.oven-stage -->
+    </div><!-- /.hero-pinned-stage -->
+  </main>
+
+  <!-- Interactive Gastrobar Modal Drawer -->
+  <aside class="gastro-modal" id="gastroModal" aria-hidden="true" role="dialog">
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+    <div class="modal-drawer">
+      <button class="modal-close-btn" id="modalCloseBtn" aria-label="Cerrar modal">&times;</button>
+      <div class="modal-body" id="modalBody"></div>
+    </div>
+  </aside>
+
+  <script type="module" src="/src/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <rect width="32" height="32" rx="6" fill="#15171a"/>
+  <rect x="4" y="10" width="24" height="14" rx="2" fill="#24272c" stroke="#ff7a18" stroke-width="1.5"/>
+  <circle cx="16" cy="17" r="4" fill="#ff7a18"/>
+  <text x="16" y="8" font-family="sans-serif" font-size="6" font-weight="bold" fill="#fff" text-anchor="middle">CORNER</text>
+</svg>
