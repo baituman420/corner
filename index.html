@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <link rel="icon" type="image/svg+xml" href="/corner/favicon.svg" />
+  <title>The Corner Gastrobar — Bilbao | Horno Industrial</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Share+Tech+Mono&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <script type="module" crossorigin src="/corner/assets/main-CzrjoSh4.js"></script>
+  <link rel="stylesheet" crossorigin href="/corner/assets/main-_hTQts3D.css">
+</head>
+<body>
+
+  <main class="hero-experience" id="heroExperience">
+    
+    <div class="hero-pinned-stage" id="pinnedStage">
+      
+      <div class="ambient-backdrop"></div>
+      
+      <!-- Oven Viewport Stage (16:9 Aspect Ratio) -->
+      <div class="oven-stage" id="ovenStage">
+        
+        <div class="oven-3d-scene" id="oven3dScene">
+          
+          <!-- 1. OVEN CHAMBER (BEHIND THE DOOR) -->
+          <div class="chamber-container" id="chamberContainer">
+            <img src="/corner/assets/oven-interior-DkGkD8Xo.jpg" class="chamber-bg" alt="Interior del horno con piedra refractaria y resistencias" />
+            <div class="chamber-heat-glow" id="chamberHeatGlow"></div>
+          </div>
+
+          <!-- 2. LOWER LABYRINTH SEAL (Elimina cualquier hueco en la bisagra) -->
+          <div class="hinge-seal-lip"></div>
+
+          <!-- 3. THE PIZZA PEEL ASSEMBLY (Z: -140px reposo en solera -> +340px hero primer plano) -->
+          <div class="pizza-peel-assembly" id="pizzaPeelAssembly">
+            <div class="peel-plane" id="peelPlane">
+              <!-- Doble capa lumínica: calor térmico interior y fotografía nítida exterior -->
+              <img src="/corner/assets/pizza-peel-warm-B-qxoX7V.png" class="peel-layer peel-warm" id="peelWarm" alt="" />
+              <img src="/corner/assets/pizza-peel-BNcGm4Qu.png" class="peel-layer peel-crisp" id="peelCrisp" alt="Pizza artesanal en pala de pizzero" />
+            </div>
+          </div>
+
+          <!-- 4. THE SINGLE 3D OVEN DOOR (Bascula hacia el espectador) -->
+          <div class="oven-door-assembly" id="doorAssembly">
+            <div class="door-prism" id="doorPrism">
+              
+              <!-- Front Face: Real Photographic Stainless Steel -->
+              <div class="door-face door-front">
+                <img src="/corner/assets/door-front-ejFphx7k.png" class="door-texture-img" alt="Puerta de acero inoxidable del horno" />
+              </div>
+
+              <!-- Inner Face: Heat-Resistant Steel reflecting internal glow -->
+              <div class="door-face door-inner" id="doorInner">
+                <img src="/corner/assets/door-inner-B4WZEDbJ.jpg" class="door-texture-img" alt="" />
+                <div class="door-inner-reflection" id="doorInnerReflection"></div>
+                <!-- Sombra proyectada por la pala sobre la compuerta abatida -->
+                <div class="peel-door-shadow" id="peelDoorShadow">
+                  <img src="/corner/assets/pizza-peel-shadow-BiaweJTc.png" class="peel-shadow-img" alt="" />
+                </div>
+              </div>
+
+              <!-- Top Edge: 28px thickness rim facing camera when tilted -->
+              <div class="door-face door-top">
+                <img src="/corner/assets/door-top-edge-DxZPvYN6.png" class="door-top-img" alt="" />
+                <div class="top-specular-edge"></div>
+              </div>
+
+              <!-- Side Thickness Edges -->
+              <div class="door-face door-side-left"></div>
+              <div class="door-face door-side-right"></div>
+
+              <!-- Rotating Hinge Arms (Heredan la rotación 1:1 de la puerta) -->
+              <div class="door-hinge-arm arm-left"></div>
+              <div class="door-hinge-arm arm-right"></div>
+            </div>
+
+            <!-- Perimeter gasket glow (leaking heat in closed state) -->
+            <div class="door-perimeter-glow" id="doorPerimeterGlow">
+              <div class="gasket-line top"></div>
+              <div class="gasket-line bottom"></div>
+              <div class="gasket-line left"></div>
+              <div class="gasket-line right"></div>
+            </div>
+          </div>
+
+          <!-- Light Wash onto lower shelf when door opens -->
+          <div class="light-wash-lower" id="lightWashLower"></div>
+
+          <!-- Fixed Hinge Bases on Chassis (No rotan) -->
+          <div class="fixed-hinge-base base-left">
+            <div class="hinge-block"></div>
+            <div class="hinge-pivot-pin"></div>
+          </div>
+          <div class="fixed-hinge-base base-right">
+            <div class="hinge-block"></div>
+            <div class="hinge-pivot-pin"></div>
+          </div>
+
+          <!-- 4. OUTER CHASSIS FRAME & SINGLE HTML NAVIGATION -->
+          <div class="oven-chassis-frame">
+            <img src="/corner/assets/oven-chassis-CNIUQeNT.png" class="chassis-texture" alt="Estructura de acero del horno" />
+            
+            <!-- Single Master HTML Navigation in Upper Fascia -->
+            <header class="oven-header-nav">
+              
+              <!-- Left Nav Links -->
+              <nav class="nav-cluster nav-left" aria-label="Navegación Carta y Local">
+                <a href="carta.html" class="steel-nav-link" id="navLinkCarta">
+                  <span class="engraved-text">CARTA</span>
+                  <span class="laser-sheen"></span>
+                </a>
+                <span class="nav-pipe" aria-hidden="true">|</span>
+                <a href="#el-local" class="steel-nav-link" id="navLinkLocal">
+                  <span class="engraved-text">EL LOCAL</span>
+                  <span class="laser-sheen"></span>
+                </a>
+              </nav>
+
+              <!-- Center Master Logo: THE CORNER GASTROBAR -->
+              <div class="oven-brand-center">
+                <span class="brand-eyebrow">THE</span>
+                <a href="./" class="brand-main-title" aria-label="The Corner Gastrobar">CORNER</a>
+                <div class="brand-subline">
+                  <span class="brand-rule"></span>
+                  <span class="brand-subtext">GASTROBAR</span>
+                  <span class="brand-rule"></span>
+                </div>
+              </div>
+
+              <!-- Right Nav Links -->
+              <nav class="nav-cluster nav-right" aria-label="Navegación Reservas y Contacto">
+                <a href="#reservas" class="steel-nav-link" id="navLinkReservas">
+                  <span class="engraved-text">RESERVAS</span>
+                  <span class="laser-sheen"></span>
+                </a>
+                <span class="nav-pipe" aria-hidden="true">|</span>
+                <a href="#contacto" class="steel-nav-link" id="navLinkContacto">
+                  <span class="engraved-text">CONTACTO</span>
+                  <span class="laser-sheen"></span>
+                </a>
+              </nav>
+            </header>
+
+            <!-- Right Pillar: Single 320°C Digital LED & Rotary Dials -->
+            <div class="oven-controls-pillar">
+              <div class="digital-temp-readout" id="digitalTemp">
+                <span class="temp-digits">320</span>
+                <span class="temp-unit">°C</span>
+              </div>
+            </div>
+
+            <!-- Initial Scroll Cue (Desliza y Descubre) -->
+            <div class="scroll-cue" id="scrollCue">
+              <div class="cue-mouse">
+                <div class="cue-wheel"></div>
+              </div>
+              <span class="cue-label">DESLIZA Y DESCUBRE</span>
+              <svg class="cue-chevron" width="16" height="10" viewBox="0 0 16 10" fill="none">
+                <path d="M1 1.5L8 8.5L15 1.5" stroke="#ff7a18" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          </div>
+
+          <!-- 5. FINAL HERO PRESENTATION CLAIM: COMER BIEN. SIN ETIQUETAS. -->
+          <div class="hero-claim-layer" id="heroClaimLayer" aria-label="Comer bien. Sin etiquetas.">
+            <div class="claim-badge">AMETZOLA · BILBAO</div>
+            <h2 class="claim-main-title">
+              <span class="claim-line">COMER BIEN.</span>
+              <span class="claim-line claim-accent">SIN ETIQUETAS.</span>
+            </h2>
+            <div class="claim-gold-rule"></div>
+          </div>
+
+        </div><!-- /.oven-3d-scene -->
+      </div><!-- /.oven-stage -->
+    </div><!-- /.hero-pinned-stage -->
+  </main>
+
+  <!-- =========================================================================
+       2. RECORRIDO GASTRONÓMICO: SABOR REAL EN AMETZOLA (FOTOGRAFÍAS REALES)
+       ========================================================================= -->
+  <section class="editorial-journey" id="gastronomia">
+    
+    <div class="journey-header">
+      <span class="journey-badge">DE NUESTRA COCINA EN AMETZOLA</span>
+      <h2 class="journey-title">SABOR REAL. SIN RODEOS.</h2>
+      <p class="journey-lead">
+        En The Corner no hay cartas infinitas ni etiquetas vacías. Hay pizzas recién horneadas, hamburguesas caseras, cazuelas tradicionales para mojar pan y el ambiente de poteo bilbaíno junto al parque de Ametzola.
+      </p>
+    </div>
+
+    <!-- CAPÍTULO 1: PIZZAS CASERAS AL HORNO -->
+    <section class="editorial-chapter chapter-pizzas" id="seccionPizzas">
+      <div class="chapter-content-wrap">
+        <div class="chapter-text-block" id="pizzaTexto">
+          <span class="chapter-num-badge">01 · DEL HORNO A TU MESA</span>
+          <h3 class="chapter-heading">PIZZAS CASERAS RECIÉN HORNEADAS</h3>
+          <p class="chapter-desc">
+            Horneadas al punto sobre solera caliente con salsa de tomate casera, base crujiente y abundante queso fundente. Desde clásicas como Margarita o Prosciutto hasta nuestra especialidad Fugazzeta con cebolla caramelizada y aceitunas.
+          </p>
+          <div class="chapter-tags">
+            <span class="c-tag">Recién Horneada</span>
+            <span class="c-tag">Abundante Queso</span>
+            <span class="c-tag">Para Compartir</span>
+          </div>
+        </div>
+
+        <div class="chapter-visual-composition visual-pizzas">
+          <!-- Pizza Entera en Madera -->
+          <div class="food-photo-card card-pizza-main" id="pizzaHeroCard">
+            <img src="/corner/assets/images/unnamed (34).jpg" class="food-photo-img" alt="Pizza artesanal entera recién horneada sobre tabla de madera" loading="lazy" />
+            <div class="card-caption">
+              <span class="caption-dot"></span>
+              <span>Pizza recién salida del horno en mesa rústica</span>
+            </div>
+          </div>
+          <!-- Detalle Queso Fundente -->
+          <div class="food-photo-card card-pizza-detail" id="pizzaCheeseCard">
+            <img src="/corner/assets/images/unnamed (19).jpg" class="food-photo-img" alt="Porción de pizza con queso fundente hilado" loading="lazy" />
+            <div class="card-caption">
+              <span class="caption-dot"></span>
+              <span>Porción con queso fundido hilado</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CAPÍTULO 2: HAMBURGUESAS JUGOSAS & PATATAS CASERAS -->
+    <section class="editorial-chapter chapter-burgers" id="seccionBurgers">
+      <div class="chapter-content-wrap wrap-reverse">
+        
+        <div class="chapter-visual-composition visual-burgers">
+          <div class="food-photo-card card-burger-main" id="burgerHeroCard">
+            <img src="/corner/assets/images/unnamed (16).jpg" class="food-photo-img" alt="Hamburguesa gourmet con queso fundido y patatas caseras cortadas a mano" loading="lazy" />
+            <div class="card-caption">
+              <span class="caption-dot"></span>
+              <span>Hamburguesa casera con patatas cortadas a mano</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="chapter-text-block" id="burgerTexto">
+          <span class="chapter-num-badge">02 · COMIDA HONESTA</span>
+          <h3 class="chapter-heading">HAMBURGUESAS JUGOSAS Y PATATAS DE VERDAD</h3>
+          <p class="chapter-desc">
+            Carne sabrosa a la plancha, lonchas de queso fundido desbordante, cebolla crujiente dorada y pan brioche suave. Acompañadas siempre de patatas 100% caseras peladas y cortadas a mano cada día en nuestra cocina.
+          </p>
+          <div class="chapter-tags">
+            <span class="c-tag">Carne a la Plancha</span>
+            <span class="c-tag">Patatas Fritas Caseras</span>
+            <span class="c-tag">Pan Brioche</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CAPÍTULO 3: LA BARRA DE AMETZOLA (PINTXOS, GILDAS Y RACIONES) -->
+    <section class="editorial-chapter chapter-barra" id="seccionBarra">
+      <div class="barra-header-wrap">
+        <span class="chapter-num-badge">03 · EL RITMO DE BILBAO</span>
+        <h3 class="chapter-heading">LA BARRA: PINTXOS, GILDAS Y RACIONES</h3>
+        <p class="chapter-desc">
+          El clásico ambiente del poteo bilbaíno. Tortillas recién hechas sobre la barra de mármol, bandejas de gildas con piparra y anchoa, torreznos crujientes y nuestras rabas de calamar fresco los sábados y domingos.
+        </p>
+      </div>
+
+      <div class="barra-showcase-grid">
+        
+        <article class="barra-item">
+          <div class="barra-photo-viewport">
+            <img src="/corner/assets/images/unnamed (1).jpg" class="barra-img" alt="Tortillas de patatas caseras enteras en la barra" loading="lazy" />
+          </div>
+          <div class="barra-item-info">
+            <h4 class="barra-name">Tortillas de la Barra</h4>
+            <p class="barra-sub">Recién cuajadas sobre el mostrador, jugosas y doradas.</p>
+          </div>
+        </article>
+
+        <article class="barra-item">
+          <div class="barra-photo-viewport">
+            <img src="/corner/assets/images/unnamed (9).jpg" class="barra-img" alt="Bandejas de gildas tradicionales de Bilbao" loading="lazy" />
+          </div>
+          <div class="barra-item-info">
+            <h4 class="barra-name">Gildas Tradicionales</h4>
+            <p class="barra-sub">Piparra tierna, anchoa en salazón y aceituna con aceite virgen.</p>
+          </div>
+        </article>
+
+        <article class="barra-item">
+          <div class="barra-photo-viewport">
+            <img src="/corner/assets/images/unnamed (28).jpg" class="barra-img" alt="Torreznos crujientes sobre pizarra" loading="lazy" />
+          </div>
+          <div class="barra-item-info">
+            <h4 class="barra-name">Torreznos sobre Pizarra</h4>
+            <p class="barra-sub">Corteza dorada y crujiente con carne tierna y sabrosa.</p>
+          </div>
+        </article>
+
+        <article class="barra-item">
+          <div class="barra-photo-viewport">
+            <img src="/corner/assets/images/unnamed (33).jpg" class="barra-img" alt="Rabas crujientes con limón fresco" loading="lazy" />
+          </div>
+          <div class="barra-item-info">
+            <h4 class="barra-name">Rabas de Fin de Semana</h4>
+            <p class="barra-sub">Calamar fresco rebozado al momento con gajos de limón.</p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- CAPÍTULO 4: CAZUELAS DE BARRO & GUISOS DE CUCHARA -->
+    <section class="editorial-chapter chapter-cazuelas" id="seccionCazuelas">
+      <div class="cazuelas-header-wrap" id="cazuelasTexto">
+        <span class="chapter-num-badge">04 · COCINA TRADICIONAL</span>
+        <h3 class="chapter-heading">GUISOS DE CUCHARA Y CAZUELAS DE BARRO</h3>
+        <p class="chapter-desc">
+          Recetas de toda la vida cocinadas sin prisas para mojar pan. Servidas directamente en cazuela de barro para conservar todo el calor y el aroma de la salsa.
+        </p>
+      </div>
+
+      <div class="cazuelas-showcase-grid">
+        
+        <article class="cazuela-card">
+          <div class="cazuela-photo-wrap">
+            <img src="/corner/assets/images/unnamed (3).jpg" class="cazuela-img" alt="Cazuela de barro con rabo de toro estofado al vino tinto" loading="lazy" />
+          </div>
+          <div class="cazuela-info">
+            <h4 class="cazuela-title">Rabo de Toro Estofado</h4>
+            <p class="cazuela-desc">Carne tierna y melosa estofada durante horas con verduras y reducción de vino tinto.</p>
+          </div>
+        </article>
+
+        <article class="cazuela-card">
+          <div class="cazuela-photo-wrap">
+            <img src="/corner/assets/images/unnamed (31).jpg" class="cazuela-img" alt="Cazuela de callos tradicionales a la vizcaína" loading="lazy" />
+          </div>
+          <div class="cazuela-info">
+            <h4 class="cazuela-title">Callos a la Vizcaína</h4>
+            <p class="cazuela-desc">Receta clásica en salsa densa de pimiento choricero, cebolla pochada y toque picante suave.</p>
+          </div>
+        </article>
+
+        <article class="cazuela-card">
+          <div class="cazuela-photo-wrap">
+            <img src="/corner/assets/images/unnamed (15).jpg" class="cazuela-img" alt="Plato de alubias caseras de la huerta" loading="lazy" />
+          </div>
+          <div class="cazuela-info">
+            <h4 class="cazuela-title">Alubias de Caserío</h4>
+            <p class="cazuela-desc">Plato de cuchara tradicional estofado a fuego lento con verduras de la huerta.</p>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Broche de Sobremesa: Tarta de Queso Horneada -->
+      <div class="postre-highlight-wrap" id="postreHighlightCard">
+        <div class="postre-photo-col">
+          <img src="/corner/assets/images/unnamed (6).jpg" class="postre-img" alt="Tarta de queso horneada casera con superficie dorada" loading="lazy" />
+        </div>
+        <div class="postre-info-col">
+          <span class="postre-badge">POSTRE CASERO</span>
+          <h4 class="postre-title">Tarta de Queso Horneada</h4>
+          <p class="postre-desc">Receta propia horneada cada día en nuestra cocina hasta conseguir la superficie caramelizada y un corazón cremoso. El broche perfecto para la sobremesa en Ametzola.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- MONOLITO PUENTE HACIA LA CARTA INDEPENDIENTE -->
+    <section class="carta-bridge-section">
+      <div class="carta-monolith-card">
+        <div class="monolith-stamp">THE CORNER · CARTA COMPLETA</div>
+        <h3 class="monolith-title">
+          TODO LO QUE SALE DE NUESTRA COCINA.<br>
+          <span class="monolith-accent">SIN SECRETOS. SIN PRECIOS OCULTOS.</span>
+        </h3>
+        <p class="monolith-desc">
+          Consulta la oferta completa de pizzas caseras al horno, hamburguesas con patatas de verdad, raciones de la barra y guisos tradicionales de cuchara organizados por categorías.
+        </p>
+        
+        <div class="monolith-actions">
+          <a href="carta.html" class="carta-explore-btn">
+            <span class="btn-text">VER LA CARTA COMPLETA</span>
+            <svg class="btn-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+          <a href="tel:+34633104367" class="carta-call-direct-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+            <span>RESERVAR: +34 633 10 43 67</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </section>
+
+  <!-- =========================================================================
+       4. GIRO DE ESQUINA 3D (90°): EL LOCAL -> DOBLA LA ESQUINA -> CONTACTO
+       ========================================================================= -->
+  <section class="corner-turn-stage" id="cornerStage">
+    
+    <div class="corner-sticky-viewport">
+      
+      <!-- Indicador de Navegación 3D en Esquina -->
+      <div class="corner-spatial-indicator">
+        <span class="indicator-step" id="cornerStepIndicator">01 / EL LOCAL</span>
+        <span class="indicator-hint">DESLIZA PARA DOBLAR LA ESQUINA ↻</span>
+      </div>
+
+      <!-- Contenedor 3D con pivote en la arista de la esquina real -->
+      <div class="corner-building" id="cornerBuilding">
+        
+        <!-- CARA A: EL LOCAL & AMBIENTE (0°) -->
+        <article class="corner-face face-local" id="el-local">
+          <div class="face-bg-wrapper">
+            <img src="/corner/assets/images/unnamed (10).jpg" class="face-bg-img" alt="Fachada exterior y terraza de The Corner Gastrobar frente al Parque de Ametzola" />
+            <div class="face-dark-overlay"></div>
+            <div class="face-turn-shadow" id="localShadowOverlay"></div>
+          </div>
+
+          <div class="face-content">
+            <div class="face-eyebrow">PARQUE DE AMETZOLA · BILBAO</div>
+            <h2 class="face-title">EL LOCAL</h2>
+            <p class="face-lead">
+              The Corner Gastrobar es el punto de encuentro natural del barrio de Ametzola. Un espacio contemporáneo y acogedor donde disfrutar de la buena mesa sin rigideces.
+            </p>
+
+            <!-- Galería de Fotos Reales del Local -->
+            <div class="local-real-gallery">
+              <div class="real-gallery-card">
+                <img src="/corner/assets/images/unnamed (10).jpg" alt="Fachada real de The Corner Gastrobar" class="gallery-thumb" />
+                <span class="gallery-label">Fachada & Soportales</span>
+              </div>
+              <div class="real-gallery-card">
+                <img src="/corner/assets/images/unnamed (5).jpg" alt="Interior contemporáneo con barra iluminada" class="gallery-thumb" />
+                <span class="gallery-label">Comedor & Barra</span>
+              </div>
+              <div class="real-gallery-card">
+                <img src="/corner/assets/images/unnamed.jpg" alt="Terraza exterior frente al Parque de Ametzola" class="gallery-thumb" />
+                <span class="gallery-label">Terraza al Parque</span>
+              </div>
+            </div>
+
+            <div class="local-specs-grid">
+              <div class="spec-card">
+                <span class="spec-icon">🌿</span>
+                <h4 class="spec-name">Terraza al Parque</h4>
+                <p class="spec-desc">Frente a la arboleda de Ametzola, protegida del tráfico y perfecta para comidas y tardes con amigos.</p>
+              </div>
+              <div class="spec-card">
+                <span class="spec-icon">🛋️</span>
+                <h4 class="spec-name">Comedor & Barra</h4>
+                <p class="spec-desc">Iluminación acogedora, barra moderna y mesas amplias para cualquier momento del día.</p>
+              </div>
+              <div class="spec-card">
+                <span class="spec-icon">🍕</span>
+                <h4 class="spec-name">Horno a la Vista</h4>
+                <p class="spec-desc">Pizzas artesanas y recetas caseras recién preparadas servidas directamente a tu mesa.</p>
+              </div>
+            </div>
+
+            <!-- Claim disparador del giro de 90° -->
+            <div class="corner-trigger-banner">
+              <span class="banner-badge">DOLORES IBÁRRURI × SANTIAGO BROUARD</span>
+              <h3 class="banner-claim">HAY MUCHO MÁS AL OTRO LADO DE LA ESQUINA</h3>
+              <p class="banner-sub">Haz scroll para doblar la esquina y acceder a nuestra ubicación, horarios y reservas directas ↓</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- CARA B: UBICACIÓN, HORARIOS & RESERVAS (90°) -->
+        <article class="corner-face face-contact" id="contacto">
+          <div class="face-turn-shadow" id="contactShadowOverlay"></div>
+          
+          <div class="face-content contact-content-layout">
+            
+            <div class="contact-header-block">
+              <span class="face-eyebrow">AMETZOLA · BILBAO (BIZKAIA)</span>
+              <h2 class="face-title">DOBLA LA ESQUINA.<br><span class="accent-gold">AQUÍ ESTAMOS.</span></h2>
+              <p class="face-lead">
+                Estamos exactamente en la esquina de la <strong>Calle Dolores Ibárruri, 15 (Bajo 8)</strong> con la Calle Santiago Brouard, frente al Parque de Ametzola.
+              </p>
+            </div>
+
+            <div class="contact-cards-grid">
+              
+              <!-- Tarjeta 1: Información Operativa Factual -->
+              <div class="info-card">
+                <div class="info-card-header">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffaa33" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  <h4>Dirección & Ubicación</h4>
+                </div>
+                <p class="info-main-text">Dolores Ibárruri Kalea, 15, Bajo 8<br>48012 Bilbao (Errekalde / Ametzola)</p>
+                <div class="geo-badge">Coordenadas: 43.2553365, -2.9431124</div>
+
+                <div class="info-divider"></div>
+
+                <div class="info-card-header">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffaa33" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  <h4>Horario Comprobado</h4>
+                </div>
+                <ul class="schedule-list">
+                  <li><span>Lunes a Domingo:</span> <strong>10:00 – 23:00</strong></li>
+                  <li><span>Cocina & Horno:</span> <strong>Comidas, meriendas y cenas</strong></li>
+                  <li><span>Rabas & Picoteo:</span> <strong>Fines de semana ininterrumpido</strong></li>
+                </ul>
+
+                <div class="info-rating">
+                  <div class="stars">★★★★★</div>
+                  <span>4.8 / 5.0 en Google & Restaurant Guru</span>
+                </div>
+              </div>
+
+              <!-- Tarjeta 2: Reservas y Acciones Inmediatas -->
+              <div class="action-card" id="reservas">
+                <div class="action-card-header">
+                  <span class="action-badge">SIN INTERMEDIARIOS</span>
+                  <h4>Reservas & Pedidos</h4>
+                  <p>Llámanos o escríbenos directamente por WhatsApp. Te confirmamos tu mesa o tu pedido para llevar al instante.</p>
+                </div>
+
+                <div class="action-buttons-group">
+                  <!-- Botón Llamada Directa -->
+                  <a href="tel:+34633104367" class="btn-primary-action btn-call">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+                    <span>LLAMAR DIRECTO: <strong>+34 633 10 43 67</strong></span>
+                  </a>
+
+                  <!-- Botón WhatsApp -->
+                  <a href="https://wa.me/34633104367?text=Hola,%20quisiera%20reservar%20una%20mesa%20en%20The%20Corner%20Gastrobar" target="_blank" rel="noopener noreferrer" class="btn-primary-action btn-wa">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+                    <span>RESERVAR POR WHATSAPP</span>
+                  </a>
+
+                  <!-- Botón Google Maps -->
+                  <a href="https://www.google.com/maps/search/?api=1&query=43.2553365,-2.9431124" target="_blank" rel="noopener noreferrer" class="btn-primary-action btn-map">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>
+                    <span>CÓMO LLEGAR (GOOGLE MAPS)</span>
+                  </a>
+                </div>
+
+                <div class="action-note">
+                  <span class="note-dot"></span>
+                  <span>Sin esperas ni pasarelas complejas. Trato directo de persona a persona.</span>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </article>
+
+      </div><!-- /.corner-building -->
+    </div><!-- /.corner-sticky-viewport -->
+  </section>
+
+  <!-- =========================================================================
+       5. FOOTER GASTRONÓMICO
+       ========================================================================= -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand-col">
+        <span class="footer-logo">THE CORNER<span class="brand-dot">.</span></span>
+        <span class="footer-sub">GASTROBAR · AMETZOLA, BILBAO</span>
+        <p class="footer-claim">«COMER BIEN. SIN ETIQUETAS.»</p>
+      </div>
+
+      <div class="footer-links-col">
+        <h5>NAVEGACIÓN RÁPIDA</h5>
+        <ul>
+          <li><a href="#heroExperience">Inicio / Horno 320°C</a></li>
+          <li><a href="#gastronomia">Recorrido Gastronómico</a></li>
+          <li><a href="carta.html">La Carta Completa</a></li>
+          <li><a href="#el-local">El Local & Terraza</a></li>
+          <li><a href="#contacto">Ubicación & Contacto</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-info-col">
+        <h5>VISÍTANOS EN BILBAO</h5>
+        <p>Dolores Ibárruri Kalea, 15, Bajo 8<br>48012 Bilbao, Bizkaia<br>Esquina con Calle Santiago Brouard</p>
+        <p class="footer-tel">Tel: <a href="tel:+34633104367">+34 633 10 43 67</a></p>
+        <span class="footer-schedule">Lunes a Domingo: 10:00 a 23:00</span>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="bottom-container">
+        <span>© The Corner Gastrobar Bilbao. Todos los derechos reservados.</span>
+        <span class="bottom-tag">Experiencia Web Interactiva 3D</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
