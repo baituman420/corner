@@ -2,6 +2,8 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
+window.ScrollTrigger = ScrollTrigger;
+window.gsap = gsap;
 
 // ==========================================================================
 // 1. DOM ELEMENTS SELECTION
@@ -180,96 +182,187 @@ function initHeroTimeline() {
 }
 
 // ==========================================================================
-// 3. INTERACTIVE MODAL & NAVIGATION
+// 3. MASTER GSAP SCROLL TIMELINE: EL GIRO DE ESQUINA 3D (90°)
 // ==========================================================================
-const modalContents = {
-  'modal-carta': `
-    <h3>La Carta</h3>
-    <span class="modal-subtitle">THE CORNER GASTROBAR · AMETZOLA, BILBAO</span>
-    <p style="color: #c7cdd6; font-size: 14px; line-height: 1.6; margin-bottom: 20px;">
-      Pizzas de autor con fermentación lenta 48h, hamburguesas maduradas y raciones caseras de temporada preparadas en nuestro horno industrial.
-    </p>
-  `,
-  'modal-local': `
-    <h3>El Local</h3>
-    <span class="modal-subtitle">UN ESPACIO INDUSTRIAL Y CÁLIDO</span>
-    <p style="color: #c7cdd6; font-size: 14px; line-height: 1.6; margin-bottom: 20px;">
-      Situado en el corazón de Ametzola, Bilbao. El punto de encuentro donde el fuego y el acero se unen a la buena gastronomía sin etiquetas.
-    </p>
-  `,
-  'modal-reservas': `
-    <h3>Reservar Mesa</h3>
-    <span class="modal-subtitle">THE CORNER GASTROBAR</span>
-    <p style="color: #c7cdd6; font-size: 14px; line-height: 1.6; margin-bottom: 20px;">
-      Disfruta de la experiencia completa en nuestro local. Reserva online o llámanos directamente.
-    </p>
-  `,
-  'modal-contacto': `
-    <h3>Contacto</h3>
-    <span class="modal-subtitle">BILBAO (BIZKAIA)</span>
-    <p style="color: #c7cdd6; font-size: 14px; line-height: 1.6;">
-      Parque de Ametzola, Bilbao.<br>
-      Teléfono: +34 944 123 456<br>
-      Email: hola@thecornergastrobar.com
-    </p>
-  `
-};
+function initCornerTimeline() {
+  const cornerStage = document.getElementById('cornerStage');
+  const fA = document.querySelector('.face-local');
+  const fB = document.querySelector('.face-contact');
+  const localShadowOverlay = document.getElementById('localShadowOverlay');
+  const contactShadowOverlay = document.getElementById('contactShadowOverlay');
+  const cornerStepIndicator = document.getElementById('cornerStepIndicator');
 
-function openModal(modalId) {
-  if (modalContents[modalId]) {
-    modalBody.innerHTML = modalContents[modalId];
-    gastroModal.classList.add('is-active');
-    gastroModal.setAttribute('aria-hidden', 'false');
-    document.body.style.overflow = 'hidden';
-  }
-}
+  if (!cornerStage || !fA || !fB) return;
 
-function closeModal() {
-  gastroModal.classList.remove('is-active');
-  gastroModal.setAttribute('aria-hidden', 'true');
-  document.body.style.overflow = '';
-}
+  ScrollTrigger.create({
+    trigger: cornerStage,
+    start: "top top",
+    end: "+=1600",
+    pin: cornerStage,
+    pinSpacing: true,
+    anticipatePin: 1,
+    scrub: 1.2,
+    onUpdate: (self) => {
+      const p = self.progress;
 
-document.querySelectorAll('[data-modal]').forEach(link => {
-  link.addEventListener('click', (e) => {
-    e.preventDefault();
-    const modalId = link.getAttribute('data-modal');
-    openModal(modalId);
+      // Cálculo del vértice de esquina 3D:
+      // A y B se unen en la arista seamX (de 100vw a 0vw)
+      const seamX = 100 - (p * 100);
+      const leftA = seamX - 100;
+      const leftB = seamX;
+
+      const rotA = -p * 90;
+      const rotB = 90 - (p * 90);
+
+      const opA = p > 0.88 ? Math.max(0, (1 - p) / 0.12) : 1;
+      const opB = p < 0.12 ? Math.max(0, p / 0.12) : 1;
+
+      fA.style.left = `${leftA}vw`;
+      fB.style.left = `${leftB}vw`;
+
+      fA.style.transform = `perspective(1400px) rotateY(${rotA.toFixed(2)}deg)`;
+      fB.style.transform = `perspective(1400px) rotateY(${rotB.toFixed(2)}deg)`;
+
+      fA.style.opacity = opA.toFixed(3);
+      fB.style.opacity = opB.toFixed(3);
+
+      // Modulación física de sombras ambientales al doblar la esquina
+      if (localShadowOverlay) {
+        localShadowOverlay.style.opacity = (p * 0.85).toFixed(3);
+      }
+      if (contactShadowOverlay) {
+        contactShadowOverlay.style.opacity = Math.max(0, (1 - p) * 0.85).toFixed(3);
+      }
+
+      // Actualización del indicador espacial de navegación
+      if (cornerStepIndicator) {
+        if (p < 0.5) {
+          cornerStepIndicator.textContent = '01 / EL LOCAL (DOLORES IBÁRRURI)';
+          cornerStepIndicator.style.borderColor = 'rgba(255, 170, 51, 0.4)';
+        } else {
+          cornerStepIndicator.textContent = '02 / DOBLA LA ESQUINA (SANTIAGO BROUARD)';
+          cornerStepIndicator.style.borderColor = 'rgba(37, 211, 102, 0.6)';
+        }
+      }
+    }
   });
-});
+}
 
-if (modalCloseBtn) modalCloseBtn.addEventListener('click', closeModal);
-if (modalBackdrop) modalBackdrop.addEventListener('click', closeModal);
-window.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape' && gastroModal.classList.contains('is-active')) {
-    closeModal();
-  }
-});
+// ==========================================================================
+// 4. CARTA INTERACTIVA: FILTRADO POR CATEGORÍAS
+// ==========================================================================
+function initMenuFilters() {
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const menuItems = document.querySelectorAll('.menu-item');
 
-// Click on scroll cue scrolls down to open the door
-if (scrollCue) {
-  scrollCue.addEventListener('click', () => {
-    window.scrollTo({
-      top: 1200,
-      behavior: 'smooth'
+  if (!filterButtons.length || !menuItems.length) return;
+
+  filterButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterButtons.forEach(b => b.classList.remove('is-active'));
+      btn.classList.add('is-active');
+
+      const filterCategory = btn.getAttribute('data-filter');
+
+      menuItems.forEach(item => {
+        const itemCat = item.getAttribute('data-category');
+        if (filterCategory === 'all' || itemCat === filterCategory) {
+          item.style.display = 'flex';
+          gsap.fromTo(item, 
+            { opacity: 0, y: 12, scale: 0.98 }, 
+            { opacity: 1, y: 0, scale: 1, duration: 0.35, ease: "power2.out" }
+          );
+        } else {
+          item.style.display = 'none';
+        }
+      });
+
+      // Actualizar offsets de ScrollTrigger ante el cambio de altura dinámica de la carta
+      ScrollTrigger.refresh();
     });
   });
 }
 
-// Micro-flicker on 320°C LED readout
-setInterval(() => {
-  if (digitalTemp) {
-    const isTempJitter = Math.random() < 0.08;
-    const tempDigits = digitalTemp.querySelector('.temp-digits');
-    if (tempDigits) {
-      tempDigits.textContent = isTempJitter ? '321' : '320';
-    }
+// ==========================================================================
+// 5. NAVEGACIÓN Y SMOOTH SCROLL POR ANCLAS
+// ==========================================================================
+function initNavigation() {
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const targetId = this.getAttribute('href');
+      if (!targetId || targetId === '#') return;
+
+      const targetEl = document.querySelector(targetId);
+      if (!targetEl) return;
+
+      e.preventDefault();
+
+      // Si el objetivo es reservas o contacto dentro de la Cara B del edificio 3D,
+      // desplazamos hacia el final del pin de cornerStage para que la esquina esté completamente rotada (90°)
+      if (targetId === '#contacto' || targetId === '#reservas') {
+        const cornerStage = document.getElementById('cornerStage');
+        if (cornerStage) {
+          const cornerST = ScrollTrigger.getAll().find(st => st.trigger === cornerStage);
+          const targetY = cornerST ? (cornerST.start + 1550) : (cornerStage.offsetTop + 1550);
+          window.scrollTo({
+            top: targetY,
+            behavior: 'smooth'
+          });
+          return;
+        }
+      }
+
+      // Si el objetivo es el local (Cara A), desplazamos al inicio de cornerStage
+      if (targetId === '#el-local') {
+        const cornerStage = document.getElementById('cornerStage');
+        if (cornerStage) {
+          const cornerST = ScrollTrigger.getAll().find(st => st.trigger === cornerStage);
+          const targetY = cornerST ? cornerST.start : cornerStage.offsetTop;
+          window.scrollTo({
+            top: targetY,
+            behavior: 'smooth'
+          });
+          return;
+        }
+      }
+
+      // Scroll estándar suave
+      const targetTop = targetEl.getBoundingClientRect().top + window.pageYOffset - 40;
+      window.scrollTo({
+        top: targetTop,
+        behavior: 'smooth'
+      });
+    });
+  });
+
+  // Micro-interacción del scroll cue inicial
+  if (scrollCue) {
+    scrollCue.addEventListener('click', () => {
+      window.scrollTo({
+        top: 1400,
+        behavior: 'smooth'
+      });
+    });
   }
-}, 3500);
+
+  // Micro-flicker analógico del display LED de 320°C
+  setInterval(() => {
+    if (digitalTemp) {
+      const isTempJitter = Math.random() < 0.08;
+      const tempDigits = digitalTemp.querySelector('.temp-digits');
+      if (tempDigits) {
+        tempDigits.textContent = isTempJitter ? '321' : '320';
+      }
+    }
+  }, 3500);
+}
 
 // ==========================================================================
-// 4. INITIALIZE
+// 6. INITIALIZE MASTER CONTROLLER
 // ==========================================================================
 window.addEventListener('DOMContentLoaded', () => {
   initHeroTimeline();
+  initCornerTimeline();
+  initMenuFilters();
+  initNavigation();
 });
