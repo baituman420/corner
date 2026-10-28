@@ -1,7 +1,8 @@
 import { defineConfig } from 'vite';
 import { resolve } from 'path';
 
-export default defineConfig({
+export default defineConfig(({ command }) => ({
+  base: command === 'build' ? '/corner/' : '/',
   build: {
     rollupOptions: {
       input: {
@@ -14,4 +15,4 @@ export default defineConfig({
     host: true,
     port: 5173
   }
-});
+}));
