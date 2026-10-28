@@ -249,38 +249,95 @@ function initCornerTimeline() {
 }
 
 // ==========================================================================
-// 4. CARTA INTERACTIVA: FILTRADO POR CATEGORÍAS
+// 4. RECORRIDO GASTRONÓMICO EDITORIAL: ENTRADAS Y COREOGRAFÍA GSAP
 // ==========================================================================
-function initMenuFilters() {
-  const filterButtons = document.querySelectorAll('.filter-btn');
-  const menuItems = document.querySelectorAll('.menu-item');
+function initEditorialScroll() {
+  const editorialJourney = document.getElementById('gastronomia');
+  if (!editorialJourney) return;
 
-  if (!filterButtons.length || !menuItems.length) return;
-
-  filterButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      filterButtons.forEach(b => b.classList.remove('is-active'));
-      btn.classList.add('is-active');
-
-      const filterCategory = btn.getAttribute('data-filter');
-
-      menuItems.forEach(item => {
-        const itemCat = item.getAttribute('data-category');
-        if (filterCategory === 'all' || itemCat === filterCategory) {
-          item.style.display = 'flex';
-          gsap.fromTo(item, 
-            { opacity: 0, y: 12, scale: 0.98 }, 
-            { opacity: 1, y: 0, scale: 1, duration: 0.35, ease: "power2.out" }
-          );
-        } else {
-          item.style.display = 'none';
-        }
-      });
-
-      // Actualizar offsets de ScrollTrigger ante el cambio de altura dinámica de la carta
-      ScrollTrigger.refresh();
+  // Transición suave de salida de la pala del hero hacia el recorrido
+  const pizzaPeelAssembly = document.getElementById('pizzaPeelAssembly');
+  if (pizzaPeelAssembly) {
+    gsap.to(pizzaPeelAssembly, {
+      opacity: 0,
+      yPercent: 20,
+      scale: 0.9,
+      scrollTrigger: {
+        trigger: editorialJourney,
+        start: "top 90%",
+        end: "top 40%",
+        scrub: 1
+      }
     });
-  });
+  }
+
+  // 1. Pizzas Caseras
+  const seccionPizzas = document.getElementById('seccionPizzas');
+  if (seccionPizzas) {
+    const tlPizzas = gsap.timeline({
+      scrollTrigger: {
+        trigger: seccionPizzas,
+        start: "top 78%",
+        toggleActions: "play none none reverse"
+      }
+    });
+
+    tlPizzas
+      .from("#pizzaTexto", { opacity: 0, y: 35, duration: 0.7, ease: "power2.out" })
+      .from("#pizzaHeroCard", { opacity: 0, scale: 0.94, y: 35, duration: 0.8, ease: "power2.out" }, "-=0.4")
+      .from("#pizzaCheeseCard", { opacity: 0, x: 25, y: 20, rotate: 3, duration: 0.75, ease: "back.out(1.4)" }, "-=0.4");
+  }
+
+  // 2. Hamburguesas & Patatas Caseras
+  const seccionBurgers = document.getElementById('seccionBurgers');
+  if (seccionBurgers) {
+    const tlBurgers = gsap.timeline({
+      scrollTrigger: {
+        trigger: seccionBurgers,
+        start: "top 78%",
+        toggleActions: "play none none reverse"
+      }
+    });
+
+    tlBurgers
+      .from("#burgerHeroCard", { opacity: 0, scale: 0.94, y: 35, duration: 0.8, ease: "power2.out" })
+      .from("#burgerTexto", { opacity: 0, x: 25, duration: 0.7, ease: "power2.out" }, "-=0.4");
+  }
+
+  // 3. La Barra de Ametzola: Entrada escalonada
+  const seccionBarra = document.getElementById('seccionBarra');
+  if (seccionBarra) {
+    gsap.from(".barra-item", {
+      scrollTrigger: {
+        trigger: seccionBarra,
+        start: "top 78%",
+        toggleActions: "play none none reverse"
+      },
+      opacity: 0,
+      y: 35,
+      scale: 0.96,
+      stagger: 0.12,
+      duration: 0.65,
+      ease: "power2.out"
+    });
+  }
+
+  // 4. Cazuelas & Cuchara
+  const seccionCazuelas = document.getElementById('seccionCazuelas');
+  if (seccionCazuelas) {
+    const tlCazuelas = gsap.timeline({
+      scrollTrigger: {
+        trigger: seccionCazuelas,
+        start: "top 75%",
+        toggleActions: "play none none reverse"
+      }
+    });
+
+    tlCazuelas
+      .from("#cazuelasTexto", { opacity: 0, y: 25, duration: 0.6, ease: "power2.out" })
+      .from(".cazuela-card", { opacity: 0, y: 30, scale: 0.96, stagger: 0.12, duration: 0.65, ease: "power2.out" }, "-=0.3")
+      .from("#postreHighlightCard", { opacity: 0, scale: 0.93, y: 25, duration: 0.7, ease: "back.out(1.2)" }, "-=0.2");
+  }
 }
 
 // ==========================================================================
@@ -363,6 +420,6 @@ function initNavigation() {
 window.addEventListener('DOMContentLoaded', () => {
   initHeroTimeline();
   initCornerTimeline();
-  initMenuFilters();
+  initEditorialScroll();
   initNavigation();
 });

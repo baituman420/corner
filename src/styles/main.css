@@ -958,413 +958,959 @@ html, body {
 }
 
 /* ==========================================================================
-   2. RECORRIDO GASTRONÓMICO: TRES PILARES
+   2. RECORRIDO GASTRONÓMICO EDITORIAL: SABOR REAL EN AMETZOLA
    ========================================================================== */
-.gastro-journey {
+.editorial-journey {
   position: relative;
   z-index: 10;
-  background: radial-gradient(circle at 50% 0%, #1c1a17 0%, #0e0f11 60%, #08090a 100%);
+  background: radial-gradient(circle at 50% 0%, #171513 0%, #0c0e11 50%, #060708 100%);
   color: #f5ede2;
-  padding: 120px 5vw 100px;
+  padding: 120px 5vw 80px;
   overflow: hidden;
 }
 
 .journey-header {
-  max-width: 800px;
-  margin: 0 auto 80px;
+  max-width: 820px;
+  margin: 0 auto 90px;
   text-align: center;
 }
 
 .journey-badge {
-  font-family: var(--font-industrial);
-  font-size: 13px;
-  letter-spacing: 0.3em;
-  color: #ffaa33;
-  text-transform: uppercase;
   display: inline-block;
-  margin-bottom: 16px;
-  padding: 4px 14px;
-  background: rgba(255, 170, 51, 0.08);
-  border: 1px solid rgba(255, 170, 51, 0.25);
-  border-radius: 4px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.25em;
+  color: var(--color-amber-bright);
+  background: rgba(255, 122, 24, 0.12);
+  border: 1px solid rgba(255, 122, 24, 0.35);
+  padding: 6px 16px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
 }
 
 .journey-title {
   font-family: var(--font-industrial);
-  font-size: clamp(32px, 5vw, 64px);
+  font-size: clamp(34px, 5vw, 56px);
   font-weight: 700;
-  line-height: 1.05;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.05em;
   color: #ffffff;
-  margin: 0 0 24px;
-  text-transform: uppercase;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+  line-height: 1.1;
+  margin-bottom: 22px;
 }
 
 .journey-lead {
-  font-size: clamp(16px, 1.3vw, 20px);
-  line-height: 1.6;
-  color: #a8b0bc;
-  margin: 0;
+  font-size: clamp(16px, 1.8vw, 19px);
+  line-height: 1.65;
+  color: #c0c6ce;
+  font-weight: 300;
 }
 
-.pillars-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 100px;
+/* --- Base Chapter Containers --- */
+.editorial-chapter {
+  position: relative;
+  max-width: 1240px;
+  margin: 0 auto 120px;
+  padding: 40px 0;
 }
 
-.pillar-card {
+.chapter-content-wrap {
   display: grid;
-  grid-template-columns: 1.1fr 1fr;
+  grid-template-columns: 1fr 1.15fr;
   gap: 60px;
   align-items: center;
-  background: rgba(22, 24, 28, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  border-radius: 16px;
-  padding: 40px;
-  backdrop-filter: blur(12px);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
-  transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
 }
 
-.pillar-card:hover {
-  transform: translateY(-4px);
-  border-color: rgba(255, 170, 51, 0.3);
-  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.7), 0 0 30px rgba(255, 122, 24, 0.1);
+.chapter-content-wrap.wrap-reverse {
+  grid-template-columns: 1.15fr 1fr;
 }
 
-.pillar-card.pillar-reverse {
-  grid-template-columns: 1fr 1.1fr;
-}
-.pillar-card.pillar-reverse .pillar-media {
-  order: 2;
-}
-.pillar-card.pillar-reverse .pillar-info {
-  order: 1;
-}
-
-.pillar-media {
-  position: relative;
-  border-radius: 12px;
-  overflow: hidden;
-  aspect-ratio: 16 / 10;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
-}
-
-.pillar-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
-}
-
-.pillar-card:hover .pillar-img {
-  transform: scale(1.05);
-}
-
-.pillar-glow-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, transparent 60%, rgba(10, 11, 13, 0.7) 100%);
-  pointer-events: none;
-}
-
-.pillar-num {
-  position: absolute;
-  top: 16px;
-  left: 20px;
-  font-family: var(--font-industrial);
-  font-size: 38px;
-  font-weight: 700;
-  color: rgba(255, 255, 255, 0.85);
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
-}
-
-.pillar-info {
-  display: flex;
-  flex-direction: column;
-}
-
-.pillar-tag {
-  font-family: var(--font-industrial);
-  font-size: 12px;
-  letter-spacing: 0.25em;
-  color: #ffaa33;
+.chapter-num-badge {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  color: var(--color-amber-bright);
+  margin-bottom: 12px;
   text-transform: uppercase;
-  margin-bottom: 10px;
 }
 
-.pillar-name {
+.chapter-heading {
   font-family: var(--font-industrial);
-  font-size: clamp(26px, 2.5vw, 42px);
+  font-size: clamp(26px, 3.4vw, 42px);
   font-weight: 700;
-  line-height: 1.1;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.03em;
   color: #ffffff;
-  margin: 0 0 16px;
-  text-transform: uppercase;
+  line-height: 1.15;
+  margin-bottom: 20px;
 }
 
-.pillar-desc {
+.chapter-desc {
   font-size: 16px;
   line-height: 1.7;
-  color: #c7cdd6;
-  margin: 0 0 24px;
+  color: #b8bec8;
+  margin-bottom: 24px;
 }
 
-.pillar-features {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.chapter-tags {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   gap: 10px;
 }
 
-.pillar-features li {
+.c-tag {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: #f0c080;
+  background: rgba(255, 170, 51, 0.08);
+  border: 1px solid rgba(255, 170, 51, 0.25);
+  padding: 5px 12px;
+  border-radius: 4px;
+}
+
+/* --- Food Photo Cards (Organic Warmth, Not Cold Metal) --- */
+.food-photo-card {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #14161a;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.08);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+}
+
+.food-photo-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 22px 50px rgba(0, 0, 0, 0.85), 0 0 25px rgba(255, 122, 24, 0.2);
+}
+
+.food-photo-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 12px 16px;
+  background: linear-gradient(to top, rgba(10, 11, 14, 0.95) 0%, rgba(10, 11, 14, 0.7) 60%, transparent 100%);
   display: flex;
   align-items: center;
-  gap: 12px;
-  font-size: 14.5px;
-  color: #e2e8f0;
+  gap: 8px;
+  font-size: 12px;
+  color: #d8dde4;
+  font-family: var(--font-mono);
+  letter-spacing: 0.04em;
 }
 
-.feat-dot {
-  width: 7px;
-  height: 7px;
+.caption-dot {
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
-  background: #ff7a18;
-  box-shadow: 0 0 8px #ff7a18;
+  background: var(--color-amber-bright);
+  box-shadow: 0 0 8px var(--color-amber-bright);
 }
 
-/* ==========================================================================
-   3. CARTA COMPLETA INTERACTIVA
-   ========================================================================== */
-.menu-section {
+/* --- Chapter 1: Pizzas Composition --- */
+.visual-pizzas {
   position: relative;
-  z-index: 10;
-  background: #0f1013;
-  padding: 100px 5vw;
-  color: #f5ede2;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
 }
 
-.menu-header {
-  max-width: 900px;
-  margin: 0 auto 60px;
+.card-pizza-main {
+  width: min(100%, 380px);
+  aspect-ratio: 4 / 5;
+  z-index: 2;
+}
+
+.card-pizza-detail {
+  position: absolute;
+  right: -20px;
+  bottom: -20px;
+  width: 200px;
+  aspect-ratio: 4 / 3;
+  z-index: 3;
+  transform: rotate(3deg);
+  border: 2px solid rgba(255, 170, 51, 0.35);
+}
+
+/* --- Chapter 2: Burgers Composition --- */
+.visual-burgers {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.card-burger-main {
+  width: min(100%, 420px);
+  aspect-ratio: 4 / 3.4;
+}
+
+/* --- Chapter 3: La Barra de Ametzola (Horizontal Showcase) --- */
+.chapter-barra {
+  background: radial-gradient(circle at 50% 50%, rgba(255, 122, 24, 0.04) 0%, transparent 70%);
+  padding: 60px 0;
+}
+
+.barra-header-wrap {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 50px;
+}
+
+.barra-showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.barra-item {
+  background: #111317;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+  transition: transform 0.35s ease, border-color 0.35s ease;
+}
+
+.barra-item:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255, 170, 51, 0.4);
+}
+
+.barra-photo-viewport {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: #08090a;
+}
+
+.barra-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.barra-item:hover .barra-img {
+  transform: scale(1.05);
+}
+
+.barra-item-info {
+  padding: 16px;
+}
+
+.barra-name {
+  font-family: var(--font-industrial);
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 6px;
+  letter-spacing: 0.02em;
+}
+
+.barra-sub {
+  font-size: 13px;
+  color: #9aa1ab;
+  line-height: 1.45;
+}
+
+/* --- Chapter 4: Cazuelas de Barro & Guisos de Cuchara --- */
+.chapter-cazuelas {
+  padding: 40px 0;
+}
+
+.cazuelas-header-wrap {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 50px;
+}
+
+.cazuelas-showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.cazuela-card {
+  background: linear-gradient(160deg, #181512 0%, #111215 100%);
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid rgba(200, 100, 40, 0.25);
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.65);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.cazuela-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.8), 0 0 20px rgba(200, 100, 40, 0.2);
+}
+
+.cazuela-photo-wrap {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: #08080a;
+}
+
+.cazuela-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.cazuela-card:hover .cazuela-img {
+  transform: scale(1.04);
+}
+
+.cazuela-info {
+  padding: 20px;
+}
+
+.cazuela-title {
+  font-family: var(--font-industrial);
+  font-size: 20px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+
+.cazuela-desc {
+  font-size: 14px;
+  color: #a4abb5;
+  line-height: 1.55;
+}
+
+/* Postre Highlight Card */
+.postre-highlight-wrap {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 36px;
+  align-items: center;
+  background: linear-gradient(135deg, #1b1612 0%, #101114 100%);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 170, 51, 0.3);
+  padding: 24px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
+}
+
+.postre-photo-col {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+}
+
+.postre-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.postre-badge {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  color: var(--color-amber-bright);
+  margin-bottom: 8px;
+}
+
+.postre-title {
+  font-family: var(--font-industrial);
+  font-size: 24px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.postre-desc {
+  font-size: 15px;
+  color: #b5bbc5;
+  line-height: 1.6;
+}
+
+/* --- Monolito Puente hacia La Carta --- */
+.carta-bridge-section {
+  max-width: 1000px;
+  margin: 80px auto 40px;
+  padding: 0 20px;
+}
+
+.carta-monolith-card {
+  background: linear-gradient(145deg, #1e2229 0%, #121418 70%, #0c0d10 100%);
+  border: 1px solid rgba(255, 170, 51, 0.35);
+  border-radius: 14px;
+  padding: 50px 40px;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.75), inset 0 1px 1px rgba(255, 255, 255, 0.12);
+}
+
+.monolith-stamp {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.25em;
+  color: var(--color-amber-bright);
+  background: rgba(255, 122, 24, 0.12);
+  padding: 6px 16px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+.monolith-title {
+  font-family: var(--font-industrial);
+  font-size: clamp(26px, 3.5vw, 42px);
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.monolith-accent {
+  color: var(--color-amber-bright);
+}
+
+.monolith-desc {
+  max-width: 650px;
+  margin: 0 auto 36px;
+  font-size: 16px;
+  line-height: 1.65;
+  color: #bac1cb;
+}
+
+.monolith-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+}
+
+.carta-explore-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #ff7a18 0%, #e65c00 100%);
+  color: #ffffff;
+  padding: 16px 34px;
+  border-radius: 6px;
+  font-family: var(--font-industrial);
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  box-shadow: 0 6px 20px rgba(255, 122, 24, 0.45);
+  transition: all 0.25s ease;
+}
+
+.carta-explore-btn:hover {
+  background: linear-gradient(135deg, #ff9138 0%, #ff6600 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(255, 122, 24, 0.6);
+}
+
+.carta-call-direct-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  padding: 16px 28px;
+  border-radius: 6px;
+  font-family: var(--font-industrial);
+  font-size: 17px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.carta-call-direct-btn:hover {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-2px);
+}
+
+/* --- Local Real Gallery in Cara A --- */
+.local-real-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 28px 0;
+}
+
+.real-gallery-card {
+  background: #14161a;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+}
+
+.gallery-thumb {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+}
+
+.gallery-label {
+  display: block;
+  padding: 8px 10px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: #cfd4dc;
+  background: #0d0f12;
   text-align: center;
 }
 
-.menu-badge {
-  font-family: var(--font-industrial);
-  font-size: 12px;
-  letter-spacing: 0.3em;
+/* ==========================================================================
+   PÁGINA DEDICADA DE LA CARTA (carta.html)
+   ========================================================================== */
+.carta-page-body {
+  background: #090a0d;
+  color: #e5e5e5;
+  font-family: var(--font-body);
+  min-height: 100vh;
+}
+
+.carta-top-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(14, 16, 20, 0.94);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 14px 5vw;
+}
+
+.carta-header-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.carta-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   color: #ffaa33;
-  display: inline-block;
-  margin-bottom: 12px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  background: rgba(255, 170, 51, 0.1);
+  border: 1px solid rgba(255, 170, 51, 0.25);
+  transition: all 0.2s ease;
 }
 
-.menu-title {
-  font-family: var(--font-industrial);
-  font-size: clamp(34px, 5vw, 68px);
-  font-weight: 700;
-  letter-spacing: 0.06em;
+.carta-back-link:hover {
+  background: rgba(255, 170, 51, 0.2);
   color: #ffffff;
-  margin: 0 0 16px;
-  text-transform: uppercase;
 }
 
-.menu-lead {
-  font-size: 17px;
-  color: #a0aab8;
-  margin: 0 0 40px;
+.carta-brand-title .brand-link {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.menu-filter-nav {
+.brand-eyebrow-mini {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.25em;
+  color: #888e99;
+}
+
+.brand-name-mini {
+  font-family: var(--font-industrial);
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #ffffff;
+  line-height: 1;
+}
+
+.brand-sub-mini {
+  font-family: var(--font-mono);
+  font-size: 8px;
+  letter-spacing: 0.2em;
+  color: #ffaa33;
+}
+
+.btn-tel-header {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 6px 14px;
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.btn-tel-header:hover {
+  background: rgba(255, 122, 24, 0.2);
+  border-color: rgba(255, 122, 24, 0.5);
+  color: #ffaa33;
+}
+
+/* Carta Hero Intro */
+.carta-hero-intro {
+  padding: 70px 5vw 40px;
+  text-align: center;
+  background: radial-gradient(circle at 50% 30%, #1c1a17 0%, #0d0e11 60%, #090a0d 100%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.carta-hero-inner {
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.carta-location-badge {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  color: #ffaa33;
+  margin-bottom: 14px;
+}
+
+.carta-main-heading {
+  font-family: var(--font-industrial);
+  font-size: clamp(38px, 6vw, 68px);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+
+.carta-intro-lead {
+  font-size: clamp(16px, 1.8vw, 19px);
+  color: #b0b7c2;
+  line-height: 1.6;
+  font-weight: 300;
+  margin-bottom: 34px;
+}
+
+.carta-category-nav {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
   justify-content: center;
 }
 
-.filter-btn {
+.cat-pill {
   font-family: var(--font-industrial);
-  font-size: 13px;
-  letter-spacing: 0.14em;
-  padding: 10px 20px;
-  background: #181b20;
-  color: #a8b2c0;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 30px;
-  cursor: pointer;
-  transition: all 0.25s ease;
-}
-
-.filter-btn:hover {
-  background: #22262d;
-  color: #ffffff;
-  border-color: rgba(255, 170, 51, 0.4);
-}
-
-.filter-btn.is-active {
-  background: linear-gradient(135deg, #a74b22 0%, #ff7a18 100%);
-  color: #ffffff;
-  border-color: #ffaa33;
-  box-shadow: 0 4px 15px rgba(255, 122, 24, 0.35);
+  font-size: 14px;
   font-weight: 600;
+  letter-spacing: 0.06em;
+  color: #d0d6de;
+  background: #14161a;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 8px 18px;
+  border-radius: 20px;
+  text-decoration: none;
+  transition: all 0.2s ease;
 }
 
-.menu-grid {
-  max-width: 1280px;
+.cat-pill:hover {
+  background: #ff7a18;
+  color: #ffffff;
+  border-color: #ff7a18;
+}
+
+/* Carta Content Container */
+.carta-container {
+  max-width: 1180px;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
-  gap: 24px;
+  padding: 60px 5vw 100px;
 }
 
-.menu-item {
-  position: relative;
-  background: #14171b;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 12px;
-  padding: 26px 24px 20px;
+.carta-category-block {
+  margin-bottom: 80px;
+  scroll-margin-top: 100px;
+}
+
+.category-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 16px;
+  margin-bottom: 32px;
+}
+
+.cat-title-wrap {
   display: flex;
-  flex-direction: column;
-  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+  align-items: baseline;
+  gap: 14px;
+  margin-bottom: 8px;
 }
 
-.menu-item:hover {
-  transform: translateY(-3px);
-  border-color: rgba(255, 170, 51, 0.35);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+.cat-num {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  color: #ffaa33;
 }
 
-.menu-item.is-featured {
-  background: linear-gradient(180deg, #1a1e24 0%, #13161a 100%);
-  border-color: rgba(255, 170, 51, 0.3);
-}
-
-.item-badge-featured {
-  position: absolute;
-  top: -11px;
-  left: 20px;
+.cat-title {
   font-family: var(--font-industrial);
-  font-size: 10px;
-  letter-spacing: 0.15em;
+  font-size: clamp(26px, 3.4vw, 36px);
   font-weight: 700;
-  color: #fff;
-  background: linear-gradient(90deg, #d35400, #ff7a18);
-  padding: 2px 10px;
-  border-radius: 4px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+  color: #ffffff;
+  letter-spacing: 0.03em;
 }
 
-.item-header {
+.cat-description {
+  font-size: 15px;
+  color: #9da5b0;
+  line-height: 1.5;
+}
+
+.dishes-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+
+.dish-card {
+  background: #111317;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 8px;
+  padding: 22px;
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.dish-card:hover {
+  border-color: rgba(255, 170, 51, 0.35);
+  transform: translateY(-2px);
+}
+
+.dish-card.dish-featured {
+  background: linear-gradient(145deg, #181512 0%, #111317 100%);
+  border-color: rgba(255, 122, 24, 0.3);
+}
+
+.dish-header {
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
-  gap: 16px;
+  align-items: flex-start;
+  gap: 12px;
   margin-bottom: 10px;
 }
 
-.item-name {
+.dish-name {
   font-family: var(--font-industrial);
   font-size: 20px;
   font-weight: 600;
-  letter-spacing: 0.03em;
   color: #ffffff;
-  margin: 0;
+  letter-spacing: 0.02em;
 }
 
-.item-price {
-  font-family: var(--font-industrial);
-  font-size: 20px;
-  font-weight: 700;
-  color: #ffaa33;
+.dish-badge {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: #9da5b0;
+  background: rgba(255, 255, 255, 0.06);
+  padding: 3px 8px;
+  border-radius: 4px;
   white-space: nowrap;
 }
 
-.item-ingredients {
-  font-size: 14px;
-  line-height: 1.55;
-  color: #9aa4b2;
-  margin: 0 0 16px;
-  flex: 1;
+.dish-badge.badge-star {
+  color: #ffaa33;
+  background: rgba(255, 170, 51, 0.12);
+  border: 1px solid rgba(255, 170, 51, 0.3);
 }
 
-.item-tags {
+.dish-desc {
+  font-size: 14px;
+  color: #a8b0bb;
+  line-height: 1.55;
+  margin-bottom: 14px;
+}
+
+.dish-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
 }
 
-.tag-pill {
-  font-size: 11px;
-  font-weight: 500;
-  color: #cfd6e0;
-  background: rgba(255, 255, 255, 0.06);
-  padding: 3px 8px;
-  border-radius: 4px;
-  border: 1px solid rgba(255, 255, 255, 0.04);
+.d-tag {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: #ffaa33;
+  background: rgba(255, 170, 51, 0.06);
+  padding: 2px 7px;
+  border-radius: 3px;
 }
 
-.menu-cta-bar {
-  max-width: 900px;
-  margin: 60px auto 0;
-  background: linear-gradient(90deg, #181b22 0%, #201e1b 100%);
-  border: 1px solid rgba(255, 170, 51, 0.3);
+/* Carta Order Box */
+.carta-order-box {
+  margin-top: 60px;
+  background: linear-gradient(135deg, #1c1a16 0%, #101215 100%);
+  border: 1px solid rgba(255, 170, 51, 0.35);
   border-radius: 12px;
-  padding: 24px 32px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 24px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  padding: 40px 30px;
+  text-align: center;
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.7);
 }
 
-.cta-bar-text {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
+.order-box-eyebrow {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  color: #ffaa33;
+  margin-bottom: 10px;
 }
 
-.cta-bar-text strong {
+.order-box-title {
   font-family: var(--font-industrial);
-  font-size: 19px;
-  color: #ffffff;
-  letter-spacing: 0.03em;
-}
-
-.cta-bar-text span {
-  font-size: 14px;
-  color: #9aa4b2;
-}
-
-.cta-bar-btn {
-  font-family: var(--font-industrial);
-  font-size: 15px;
-  letter-spacing: 0.1em;
+  font-size: clamp(24px, 3.2vw, 36px);
   font-weight: 700;
   color: #ffffff;
-  background: #ff7a18;
-  padding: 14px 28px;
-  border-radius: 8px;
-  text-decoration: none;
+  margin-bottom: 12px;
+}
+
+.order-box-desc {
+  max-width: 600px;
+  margin: 0 auto 28px;
+  font-size: 15px;
+  color: #b0b7c2;
+  line-height: 1.6;
+}
+
+.order-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.btn-call-order, .btn-wa-order {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  white-space: nowrap;
-  box-shadow: 0 4px 15px rgba(255, 122, 24, 0.4);
+  padding: 15px 30px;
+  border-radius: 6px;
+  font-family: var(--font-industrial);
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-decoration: none;
   transition: all 0.25s ease;
 }
 
-.cta-bar-btn:hover {
+.btn-call-order {
+  background: linear-gradient(135deg, #ff7a18 0%, #e65c00 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 18px rgba(255, 122, 24, 0.4);
+}
+
+.btn-call-order:hover {
   background: #ff9138;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(255, 122, 24, 0.6);
+}
+
+.btn-wa-order {
+  background: #25d366;
+  color: #ffffff;
+  box-shadow: 0 4px 18px rgba(37, 211, 102, 0.3);
+}
+
+.btn-wa-order:hover {
+  background: #2ee272;
+  transform: translateY(-2px);
+}
+
+.order-info-footer {
+  font-size: 13px;
+  color: #8c939e;
+  font-family: var(--font-mono);
+}
+
+.sep-dot {
+  margin: 0 8px;
+}
+
+/* Carta Footer */
+.carta-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 30px 5vw;
+  background: #07080a;
+}
+
+.carta-footer-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.c-footer-brand {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.f-brand-logo {
+  font-family: var(--font-industrial);
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.c-footer-brand span {
+  font-size: 12px;
+  color: #888f9a;
+  font-family: var(--font-mono);
+}
+
+.c-footer-nav {
+  display: flex;
+  gap: 18px;
+}
+
+.c-footer-nav a {
+  color: #a8b0bb;
+  font-size: 13px;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.c-footer-nav a:hover {
+  color: #ffaa33;
+}
+
+.c-footer-copy {
+  font-size: 12px;
+  color: #6e7580;
+  font-family: var(--font-mono);
 }
 
 /* ==========================================================================
@@ -1901,18 +2447,25 @@ html, body {
    RESPONSIVE ADJUSTMENTS
    ========================================================================== */
 @media (max-width: 1024px) {
-  .pillars-container {
-    gap: 60px;
-  }
-  .pillar-card, .pillar-card.pillar-reverse {
+  .chapter-content-wrap, 
+  .chapter-content-wrap.wrap-reverse {
     grid-template-columns: 1fr;
-    gap: 30px;
+    gap: 40px;
   }
-  .pillar-card.pillar-reverse .pillar-media {
-    order: 1;
-  }
-  .pillar-card.pillar-reverse .pillar-info {
+  .wrap-reverse .visual-burgers {
     order: 2;
+  }
+  .barra-showcase-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .cazuelas-showcase-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .postre-highlight-wrap {
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
   .contact-cards-grid {
     grid-template-columns: 1fr;
@@ -1927,16 +2480,54 @@ html, body {
 }
 
 @media (max-width: 768px) {
-  .menu-grid {
+  .visual-pizzas {
+    flex-direction: column;
+    min-height: auto;
+  }
+  .card-pizza-detail {
+    position: static;
+    width: 100%;
+    transform: none;
+    margin-top: 16px;
+  }
+  .barra-showcase-grid {
     grid-template-columns: 1fr;
   }
-  .menu-cta-bar {
+  .cazuelas-showcase-grid {
+    grid-template-columns: 1fr;
+  }
+  .dishes-grid {
+    grid-template-columns: 1fr;
+  }
+  .local-real-gallery {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .monolith-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  .carta-explore-btn, 
+  .carta-call-direct-btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .order-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  .btn-call-order, 
+  .btn-wa-order {
+    width: 100%;
+    justify-content: center;
+  }
+  .carta-footer-inner {
     flex-direction: column;
     text-align: center;
-    padding: 20px;
+    gap: 14px;
   }
-  .cta-bar-btn {
-    width: 100%;
+  .c-footer-nav {
+    flex-wrap: wrap;
     justify-content: center;
   }
   .face-content {

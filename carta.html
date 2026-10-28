@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <title>La Carta — The Corner Gastrobar | Bilbao</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Share+Tech+Mono&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="/src/styles/main.css" />
+</head>
+<body class="carta-page-body">
+
+  <!-- =========================================================================
+       CABECERA FIJA SUPERIOR DE LA CARTA
+       ========================================================================= -->
+  <header class="carta-top-header">
+    <div class="carta-header-container">
+      <a href="/#heroExperience" class="carta-back-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        <span>VOLVER AL INICIO</span>
+      </a>
+
+      <div class="carta-brand-title">
+        <a href="/" class="brand-link">
+          <span class="brand-eyebrow-mini">THE</span>
+          <span class="brand-name-mini">CORNER</span>
+          <span class="brand-sub-mini">GASTROBAR · BILBAO</span>
+        </a>
+      </div>
+
+      <div class="carta-call-action">
+        <a href="tel:+34633104367" class="btn-tel-header">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+          <span>633 10 43 67</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="carta-main-content">
+    
+    <!-- Hero / Portada de la Carta -->
+    <section class="carta-hero-intro">
+      <div class="carta-hero-inner">
+        <span class="carta-location-badge">DOLORES IBÁRRURI, 15 · PARQUE DE AMETZOLA, BILBAO</span>
+        <h1 class="carta-main-heading">NUESTRA CARTA</h1>
+        <p class="carta-intro-lead">
+          Pizzas recién horneadas, hamburguesas contundentes con patatas caseras, cazuelas tradicionales y la barra de raciones de Bilbao. Cocina cercana, honesta y hecha al momento.
+        </p>
+
+        <!-- Barra de Salto Rápido por Categorías -->
+        <nav class="carta-category-nav" aria-label="Categorías de la carta">
+          <a href="#cat-pizzas" class="cat-pill">PIZZAS AL HORNO</a>
+          <a href="#cat-burgers" class="cat-pill">HAMBURGUESAS & CASERO</a>
+          <a href="#cat-barra" class="cat-pill">LA BARRA & RACIONES</a>
+          <a href="#cat-cazuelas" class="cat-pill">CAZUELAS & GUISOS</a>
+          <a href="#cat-postres" class="cat-pill">POSTRES CASEROS</a>
+        </nav>
+      </div>
+    </section>
+
+    <div class="carta-container">
+
+      <!-- =====================================================================
+           CATEGORÍA 1: PIZZAS CASERAS AL HORNO
+           ===================================================================== -->
+      <section class="carta-category-block" id="cat-pizzas">
+        <div class="category-header">
+          <div class="cat-title-wrap">
+            <span class="cat-num">01</span>
+            <h2 class="cat-title">PIZZAS AL HORNO</h2>
+          </div>
+          <p class="cat-description">
+            Horneadas directamente al punto con abundante queso fundente, base crujiente y recetas clásicas y de la casa.
+          </p>
+        </div>
+
+        <div class="dishes-grid">
+          
+          <article class="dish-card">
+            <div class="dish-header">
+              <h3 class="dish-name">Pizza Margarita Clásica</h3>
+              <span class="dish-badge">Al Horno</span>
+            </div>
+            <p class="dish-desc">Salsa de tomate casera, mozzarella fundida en abundancia, orégano y hojas de albahaca fresca con aceite de oliva virgen extra.</p>
+            <div class="dish-tags"><span class="d-tag">Vegetariana</span><span class="d-tag">Clásica</span></div>
+          </article>
+
+          <article class="dish-card dish-featured">
+            <div class="dish-header">
+              <h3 class="dish-name">Pizza Fugazzeta</h3>
+              <span class="dish-badge badge-star">Especialidad</span>
+            </div>
+            <p class="dish-desc">Doble cobertura de queso mozzarella fundido, cebolla caramelizada crujiente horneada al punto, orégano silvestre y aceitunas negras.</p>
+            <div class="dish-tags"><span class="d-tag">Cebolla Caramelizada</span><span class="d-tag">Abundante Queso</span></div>
+          </article>
+
+          <article class="dish-card">
+            <div class="dish-header">
+              <h3 class="dish-name">Pizza Cuatro Quesos</h3>
+              <span class="dish-badge">Al Horno</span>
+            </div>
+            <p class="dish-desc">Combinación cremosa de mozzarella, queso provolone, queso azul de sabor suave y gratinado tostado de queso curado.</p>
+            <div class="dish-tags"><span class="d-tag">Quesos Seleccionados</span></div>
+          </article>
+
+          <article class="dish-card">
+            <div class="dish-header">
+              <h3 class="dish-name">Pizza Prosciutto e Funghi</h3>
+              <span class="dish-badge">Al Horno</span>
+            </div>
+            <p class="dish-desc">Jamón cocido seleccionado en láminas generosas, champiñones frescos laminados y salteados, mozzarella fundente y tomate casero.</p>
+            <div class="dish-tags"><span class="d-tag">Champiñón Fresco</span></div>
+          </article>
+
+          <article class="dish-card">
+            <div class="dish-header">
+              <h3 class="dish-name">Pizza con Atún, Olivas y Jamón</h3>
+              <span class="dish-badge">Al Horno</span>
+            </div>
+            <p class="dish-desc">Tomate, mozzarella suave, lomos de atún, jamón cocido y aceitunas sobre masa tostada y crujiente.</p>
+            <div class="dish-tags"><span class="d-tag">Completa</span></div>
+          </article>
+
+          <article class="dish-card">
+            <div class="dish-header">
+              <h3 class="dish-name">Pizza Criolla de Carne</h3>
+              <span class="dish-badge">Al Horno</span>
+            </div>
+            <p class="dish-desc">Carne picada de vacuno sazonada con sofrito casero, cebolla morada horneada, tiras de pimiento rojo y salsa barbacoa suave.</p>
+            <div class="dish-tags"><span class="d-tag">Sabor Intenso</span></div>
+          </article>
+
+          <article class="dish-card">
+            <div class="dish-header">
+              <h3 class="dish-name">Calzone Cerrado al Horno</h3>
+              <span class="dish-badge">Al Horno</span>
+            </div>
+            <p class="dish-desc">Masa de pizza doblada y dorada al horno, rellena en su interior de queso mozzarella hilado, jamón york, ricotta suave y salsa de tomate.</p>
+            <div class="dish-tags"><span class="d-tag">Relleno Cremoso</span></div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           CATEGORÍA 2: HAMBURGUESAS & CASERO
+           ===================================================================== -->
+      <section class="carta-category-block" id="cat-burgers">
+        <div class="category-header">
+          <div class="cat-title-wrap">
+            <span class="cat-num">02</span>
+            <h2 class="cat-title">HAMBURGUESAS & PLATOS CASEROS</h2>
+          </div>
+          <p class="cat-description">
+            Carnes preparadas en cocina, queso fundido desbordante y patatas 100% caseras peladas y cortadas a mano cada día.
+          </p>
+        </div>
+
+        <div class="dishes-grid">
+
+          <article class="dish-card dish-featured">
+            <div class="dish-header">
+              <h3 class="dish-name">Hamburguesa The Corner Pulled Pork</h3>
+              <span class="dish-badge badge-star">Recomendada</span>
+            </div>
+            <p class="dish-desc">Cerdo asado lentamente en sus propios jugos hasta deshilarse, queso cheddar fundido, cebolla crujiente dorada y salsa barbacoa en pan brioche suave. Acompañada de generosa ración de patatas fritas caseras.</p>
+            <div class="dish-tags"><span class="d-tag">Patatas Caseras</span><span class="d-tag">Pan Brioche</span></div>
+          </article>
+
+          <article class="dish-card">
+            <div class="dish-header">
+              <h3 class="dish-name">Hamburguesa Casera Completa</h3>
+              <span class="dish-badge">Con Patatas</span>
+            </div>
+            <p class="dish-desc">Carne de vacuno a la plancha, lonchas de queso fundido, bacon ahumado crujiente, lechuga fresca, tomate y salsa de la casa con patatas caseras recién fritas.</p>
+            <div class="dish-tags"><span class="d-tag">Patatas Caseras</span></div>
+          </article>
+
+          <article class="dish-card">
+            <div class="dish-header">
+              <h3 class="dish-name">Empanadas Criollas al Horno</h3>
+              <span class="dish-badge">Caseras</span>
+            </div>
+            <p class="dish-desc">Masa artesanal dorada al horno rellena de carne picada sazonada con cebolla pochada, pimentón dulce y especias tradicionales con repulgue cerrado a mano.</p>
+            <div class="dish-tags"><span class="d-tag">Hechas a Mano</span><span class="d-tag">Horno Propio</span></div>
+          </article>
+
+          <article class="dish-card">
+            <div class="dish-header">
+              <h3 class="dish-name">Plato Combinado Casero</h3>
+              <span class="dish-badge">De la Cocina</span>
+            </div>
+            <p class="dish-desc">Filete de ternera a la plancha con su jugo, dos huevos fritos con puntilla dorada y montaña de patatas fritas 100% caseras cortadas a mano.</p>
+            <div class="dish-tags"><span class="d-tag">Clásico Casero</span></div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           CATEGORÍA 3: LA BARRA & RACIONES DE BILBAO
+           ===================================================================== -->
+      <section class="carta-category-block" id="cat-barra">
+        <div class="category-header">
+          <div class="cat-title-wrap">
+            <span class="cat-num">03</span>
+            <h2 class="cat-title">LA BARRA & RACIONES DE BILBAO</h2>
+          </div>
+          <p class="cat-description">
+            El ambiente del poteo en Ametzola. Tortillas recién cuajadas sobre el mostrador, gildas con aceite de oliva virgen y raciones crujientes para compartir.
+          </p>
+        </div>
+
+        <div class="dishes-grid">
+
+          <article class="dish-card">
+            <div class="dish-header">
+              <h3 class="dish-name">Gildas Tradicionales de Bilbao</h3>
+              <span class="dish-badge">La Barra</span>
+            </div>
+            <p class="dish-desc">Banderilla clásica de piparra tierna en vinagre, anchoa seleccionada en salazón y aceituna manzanilla bañadas en aceite de oliva virgen extra.</p>
+            <div class="dish-tags"><span class="d-tag">Aperitivo Clásico</span></div>
+          </article>
+
+          <article class="dish-card">
+            <div class="dish-header">
+              <h3 class="dish-name">Tortilla de Patatas de la Barra</h3>
+              <span class="dish-badge">Recién Cuajada</span>
+            </div>
+            <p class="dish-desc">Tortilla española casera de patata y huevo con punto cremoso y jugoso en su interior, servida por porción o para compartir.</p>
+            <div class="dish-tags"><span class="d-tag">Casera</span></div>
+          </article>
+
+          <article class="dish-card dish-featured">
+            <div class="dish-header">
+              <h3 class="dish-name">Rabas de Calamar Crujientes</h3>
+              <span class="dish-badge badge-star">Fines de Semana</span>
+            </div>
+            <p class="dish-desc">Tiras de calamar tierno enharinadas y fritas al momento en aceite limpio, servidas doradas y crujientes con gajos de limón fresco.</p>
+            <div class="dish-tags"><span class="d-tag">Sábados y Domingos</span></div>
+          </article>
+
+          <article class="dish-card">
+            <div class="dish-header">
+              <h3 class="dish-name">Torreznos Crujientes sobre Pizarra</h3>
+              <span class="dish-badge">Ración</span>
+            </div>
+            <p class="dish-desc">Panceta adobada frita a fuego lento con corteza dorada y crujiente que estalla al morder, manteniendo la carne tierna y sabrosa.</p>
+            <div class="dish-tags"><span class="d-tag">Crujiente</span></div>
+          </article>
+
+          <article class="dish-card">
+            <div class="dish-header">
+              <h3 class="dish-name">Croquetas Caseras de Jamón</h3>
+              <span class="dish-badge">Caseras</span>
+            </div>
+            <p class="dish-desc">Elaboradas en nuestra cocina con bechamel suave y cremosa enriquecida con jamón ibérico picado. Rebozado fino y crujiente.</p>
+            <div class="dish-tags"><span class="d-tag">Hechas en Casa</span></div>
+          </article>
+
+          <article class="dish-card">
+            <div class="dish-header">
+              <h3 class="dish-name">Croquetas Caseras de Bacalao</h3>
+              <span class="dish-badge">Caseras</span>
+            </div>
+            <p class="dish-desc">Bechamel cremosa ligada con migas de bacalao desalado y toque fresco de perejil picado.</p>
+            <div class="dish-tags"><span class="d-tag">Sabor Tradicional</span></div>
+          </article>
+
+          <article class="dish-card">
+            <div class="dish-header">
+              <h3 class="dish-name">Pimientos Rellenos en Salsa</h3>
+              <span class="dish-badge">Cocina Casera</span>
+            </div>
+            <p class="dish-desc">Pimientos del piquillo rellenos de farsa casera cocinados a fuego lento en salsa tradicional vizcaína con cebolla y tomate dulce.</p>
+            <div class="dish-tags"><span class="d-tag">Salsa Casera</span></div>
+          </article>
+
+          <article class="dish-card">
+            <div class="dish-header">
+              <h3 class="dish-name">Alitas Adobadas al Horno</h3>
+              <span class="dish-badge">Al Horno</span>
+            </div>
+            <p class="dish-desc">Alitas de pollo marinadas con especias y asadas en el horno hasta lograr una piel dorada y crujiente con interior jugoso.</p>
+            <div class="dish-tags"><span class="d-tag">Al Horno</span></div>
+          </article>
+
+          <article class="dish-card">
+            <div class="dish-header">
+              <h3 class="dish-name">Tostas de Setas y Jamón</h3>
+              <span class="dish-badge">Pintxo</span>
+            </div>
+            <p class="dish-desc">Pan rústico tostado con salteado de setas al ajillo coronadas con virutas de jamón curado.</p>
+            <div class="dish-tags"><span class="d-tag">Para Picar</span></div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           CATEGORÍA 4: CAZUELAS DE BARRO & GUISOS DE CUCHARA
+           ===================================================================== -->
+      <section class="carta-category-block" id="cat-cazuelas">
+        <div class="category-header">
+          <div class="cat-title-wrap">
+            <span class="cat-num">04</span>
+            <h2 class="cat-title">CAZUELAS DE BARRO & GUISOS DE CUCHARA</h2>
+          </div>
+          <p class="cat-description">
+            Recetas de siempre cocinadas sin prisas. Servidas directamente en cazuela de barro para mantener todo el calor y sabor de la salsa.
+          </p>
+        </div>
+
+        <div class="dishes-grid">
+
+          <article class="dish-card dish-featured">
+            <div class="dish-header">
+              <h3 class="dish-name">Cazuela de Rabo de Toro Estofado</h3>
+              <span class="dish-badge badge-star">Plato de Cuchara</span>
+            </div>
+            <p class="dish-desc">Rabo de vacuno estofado lentamente durante horas en cazuela de barro con verduras de temporada y reducción de vino tinto. Carne melosa y tierna que se desprende del hueso.</p>
+            <div class="dish-tags"><span class="d-tag">Cazuela de Barro</span><span class="d-tag">Guiso Lento</span></div>
+          </article>
+
+          <article class="dish-card">
+            <div class="dish-header">
+              <h3 class="dish-name">Callos Tradicionales a la Vizcaína</h3>
+              <span class="dish-badge">De la Casa</span>
+            </div>
+            <p class="dish-desc">Callos limpios y cocinados a fuego lento con salsa ligada de pimiento choricero, cebolla pochada y jamón con un toque picante suave.</p>
+            <div class="dish-tags"><span class="d-tag">Receta Típica</span></div>
+          </article>
+
+          <article class="dish-card">
+            <div class="dish-header">
+              <h3 class="dish-name">Alubias Caseras de la Huerta</h3>
+              <span class="dish-badge">Plato de Cuchara</span>
+            </div>
+            <p class="dish-desc">Alubias estofadas en su propio caldo denso y reposado con verduras picadas y su tradicional acompañamiento.</p>
+            <div class="dish-tags"><span class="d-tag">Legumbre Casera</span></div>
+          </article>
+
+          <article class="dish-card">
+            <div class="dish-header">
+              <h3 class="dish-name">Asado al Horno con Ensalada Mixta</h3>
+              <span class="dish-badge">Al Horno</span>
+            </div>
+            <p class="dish-desc">Carne asada al horno con piel crujiente y jugosa en su propio jugo con guarnición de patatas y ensalada fresca mixta.</p>
+            <div class="dish-tags"><span class="d-tag">Asado Casero</span></div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           CATEGORÍA 5: POSTRES CASEROS
+           ===================================================================== -->
+      <section class="carta-category-block" id="cat-postres">
+        <div class="category-header">
+          <div class="cat-title-wrap">
+            <span class="cat-num">05</span>
+            <h2 class="cat-title">POSTRES CASEROS</h2>
+          </div>
+          <p class="cat-description">
+            El dulce final para la sobremesa en Ametzola. Hechos en nuestra cocina cada día.
+          </p>
+        </div>
+
+        <div class="dishes-grid">
+
+          <article class="dish-card dish-featured">
+            <div class="dish-header">
+              <h3 class="dish-name">Tarta de Queso Horneada Casera</h3>
+              <span class="dish-badge badge-star">Horno Propio</span>
+            </div>
+            <p class="dish-desc">Receta de la casa horneada a temperatura alta para conseguir una superficie tostada y dorada con un interior cremoso y suave.</p>
+            <div class="dish-tags"><span class="d-tag">Horneada en Casa</span></div>
+          </article>
+
+          <article class="dish-card">
+            <div class="dish-header">
+              <h3 class="dish-name">Flan Casero con Nata</h3>
+              <span class="dish-badge">Casero</span>
+            </div>
+            <p class="dish-desc">Flan de huevo tradicional preparado con caramelo rubio casero, servido bien frío con copete de nata montada.</p>
+            <div class="dish-tags"><span class="d-tag">Receta Tradicional</span></div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- Bloque de Contacto Directo para Encargos y Reservas -->
+      <section class="carta-order-box">
+        <div class="order-box-content">
+          <span class="order-box-eyebrow">RESERVAS & PEDIDOS PARA LLEVAR</span>
+          <h3 class="order-box-title">¿QUIERES RESERVAR MESA O ENCARGAR?</h3>
+          <p class="order-box-desc">
+            Atendemos directamente en cocina y barra sin intermediarios. Llámanos o escríbenos por WhatsApp para confirmar tu mesa o tu pedido al instante.
+          </p>
+          <div class="order-actions">
+            <a href="tel:+34633104367" class="btn-primary-action btn-call-order">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+              <span>LLAMAR: +34 633 10 43 67</span>
+            </a>
+            <a href="https://wa.me/34633104367?text=Hola,%20quisiera%20reservar%20una%20mesa%20en%20The%20Corner%20Gastrobar" target="_blank" rel="noopener noreferrer" class="btn-primary-action btn-wa-order">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+              <span>RESERVAR POR WHATSAPP</span>
+            </a>
+          </div>
+          <div class="order-info-footer">
+            <span>Dolores Ibárruri Kalea, 15, Bajo 8, 48012 Bilbao</span>
+            <span class="sep-dot">·</span>
+            <span>Horario: Lunes a Domingo de 10:00 a 23:00</span>
+          </div>
+        </div>
+      </section>
+
+    </div><!-- /.carta-container -->
+  </main>
+
+  <!-- Footer de la Carta -->
+  <footer class="carta-footer">
+    <div class="carta-footer-inner">
+      <div class="c-footer-brand">
+        <a href="/" class="f-brand-logo">THE CORNER<span class="accent-orange">.</span></a>
+        <span>GASTROBAR · AMETZOLA, BILBAO</span>
+      </div>
+      <div class="c-footer-nav">
+        <a href="/#heroExperience">Inicio / Horno</a>
+        <a href="/#gastronomia">Recorrido Gastronómico</a>
+        <a href="/#el-local">El Local & Terraza</a>
+        <a href="/#contacto">Ubicación & Contacto</a>
+      </div>
+      <div class="c-footer-copy">
+        <span>© The Corner Gastrobar Bilbao · Información verificada</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
